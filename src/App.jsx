@@ -1,4 +1,4 @@
-import { useContext} from "react";
+import { useContext } from "react";
 import { AppContext } from "./GlobalContext/AppContext";
 import styled from "styled-components";
 import NavBar from "./components/NavBar/NavBar";
@@ -13,15 +13,13 @@ function App() {
   const darkTheme = state.darkTheme;
 
   return (
-    <div>
-      <AppContainer darkTheme={darkTheme}>
-        <NavBar />
-        <About/>
-        <Projects/>
-        <Contact/>
-        <Footer/>
-      </AppContainer>
-    </div>
+    <AppContainer darkTheme={darkTheme}>
+      <NavBar />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
+    </AppContainer>
   );
 }
 
@@ -29,9 +27,10 @@ export default App;
 
 const AppContainer = styled.div`
   width: 100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: ${({ darkTheme }) => (darkTheme ? "#050402" : "#ffffff")};
   color: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#050402")};
 `;
