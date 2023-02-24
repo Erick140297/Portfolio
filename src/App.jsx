@@ -33,4 +33,5 @@ const AppContainer = styled.div`
   align-items: center;
   background: ${({ darkTheme }) => (darkTheme ? "#050402" : "#ffffff")};
   color: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#050402")};
+  transition: all 0.3s ease;
 `;

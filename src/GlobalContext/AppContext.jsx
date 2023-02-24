@@ -2,6 +2,7 @@ import React, { createContext, useReducer } from "react";
 
 const initialState = {
   darkTheme: false,
+  language: "EN",
 };
 
 function Reducer(state, action) {
@@ -10,6 +11,11 @@ function Reducer(state, action) {
       return {
         ...state,
         darkTheme: action.payload,
+      };
+    case "CHANGE_LANGUAGE":
+      return {
+        ...state,
+        language: action.payload,
       };
     default:
       return state;
