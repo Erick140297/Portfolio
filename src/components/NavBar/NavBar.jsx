@@ -132,6 +132,7 @@ const Title = styled.h2`
 
   @media screen and (max-width: 950px) {
     font-size: 20px;
+    padding: 5px 10px;
   }
 `;
 
