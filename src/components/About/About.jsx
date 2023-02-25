@@ -19,4 +19,7 @@ const Container = styled.div`
   text-align: justify;
   padding-top: 100px;
   min-height: 100vh;
+  @media screen and (max-width: 950px) {
+  padding-top: 70px;
+  }
 `
