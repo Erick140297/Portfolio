@@ -129,6 +129,10 @@ const Title = styled.h2`
     border-radius: 15px;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 950px) {
+    font-size: 20px;
+  }
 `;
 
 const Menu = styled.ul`
@@ -139,7 +143,6 @@ const Menu = styled.ul`
   }
   @media screen and (max-width: 950px) {
     flex-direction: column;
-    margin-top: 20px;
     margin-bottom: 15px;
     align-items: center;
   }
@@ -162,6 +165,7 @@ const NavLink = styled(Link)`
 
   @media screen and (max-width: 950px) {
     padding: 5px 10px;
+    font-size: 18px;
   }
 `;
 
