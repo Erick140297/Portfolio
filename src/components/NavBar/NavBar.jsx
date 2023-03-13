@@ -10,7 +10,6 @@ const NavBar = () => {
   const { state, dispatch } = useContext(AppContext);
   const darkTheme = state.darkTheme;
   const defaultLanguage = state.language;
-  console.log(defaultLanguage);
   const [scrollTop, setScrollTop] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -55,7 +54,7 @@ const NavBar = () => {
               darkTheme={darkTheme}
               onClick={() => setShowMenu(!showMenu)}
             >
-              {defaultLanguage === "EN" ? `About` : `Acerca de`}
+              {defaultLanguage === "EN" ? `About me` : `Sobre mí`}
             </NavLink>
           </li>
           <li>
