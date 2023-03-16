@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../GlobalContext/AppContext";
+import toast, { Toaster } from "react-hot-toast";
 import styled from "styled-components";
 
 const Contact = () => {
@@ -61,11 +62,10 @@ const Contact = () => {
       (input.message === "")
     ) {
       validate(input);
-      //Notificación ocurrio un problema
+      toast.error("E-mail could not be sent!");
     } else if (!response) {
       //Aquí va la función que mandará el correo
-      //Notificación correo exitoso
-      console.log("enviado");
+      toast.success("E-mail sent!");
       setCountSubmit(0);
       setInput({
         name: "",
@@ -73,8 +73,8 @@ const Contact = () => {
         email: "",
         message: "",
       });
-    } else{
-      //Notificación ocurrio un problema
+    } else {
+      toast.error("E-mail sent!");
     }
   };
 
@@ -168,6 +168,7 @@ const Contact = () => {
           </form>
         </div>
       )}
+      <Toaster />
     </Container>
   );
 };
