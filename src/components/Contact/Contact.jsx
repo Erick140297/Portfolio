@@ -72,13 +72,13 @@ const Contact = () => {
         .then(
           () => {
             defaultLanguage === "EN"
-            ? toast.success("E-mail sent!")
-            : toast.success("Correo enviado");
+              ? toast.success("E-mail sent!")
+              : toast.success("Correo enviado");
           },
           () => {
             defaultLanguage === "EN"
-            ? toast.error("E-mail could not be sent!")
-            : toast.error("El correo no se pudo enviar");
+              ? toast.error("E-mail could not be sent!")
+              : toast.error("El correo no se pudo enviar");
           }
         );
       setCountSubmit(0);
@@ -174,7 +174,7 @@ const Contact = () => {
                   </Alert>
                 )}
               </Item>
-              <input type="submit" value={"Submit"} />
+              <Submit type="submit" value={"Submit"} darktheme={darkTheme}/>
             </form>
           </FormContainer>
         </div>
@@ -255,7 +255,7 @@ const Contact = () => {
                   </Alert>
                 )}
               </Item>
-              <input type="submit" value={"Enviar"} />
+              <Submit type="submit" value={"Enviar"} darktheme={darkTheme}/>
             </form>
           </FormContainer>
         </div>
@@ -283,7 +283,7 @@ const Container = styled.div`
     margin-bottom: 20px;
   }
   form {
-    background: ${({ darktheme }) => (darktheme ? "#212020" : "#aba8a8")};
+    background: ${({ darktheme }) => (darktheme ? "#212020" : "#00b0ff")};
     padding: 20px;
     border-radius: 10px;
     width: 60%;
@@ -305,6 +305,19 @@ const Container = styled.div`
   @media screen and (max-width: 950px) {
     form {
       width: 100%;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 15px;
+    }
+    label {
+      font-size: 18px;
+    }
+    span {
+      font-size: 15px;
     }
   }
 `;
@@ -328,15 +341,33 @@ const Item = styled.div`
       outline: none;
     }
   }
+  @media screen and (max-width: 950px) {
+    input {
+      height: 25px;
+      font-size: 15px;
+    }
+  }
 `;
 
 const FormContainer = styled.div`
   display: flex;
   justify-content: center;
+  color: white;
 `;
 
 const Alert = styled.span`
-  color: ${({ darktheme }) => (darktheme ? "#ff0000" : "#d00707")};
-  margin-left: 5px;
+  /* color: ${({ darktheme }) => (darktheme ? "#ff0000" : "#000000")}; */
+  color: #ff0000; 
   font-size: 16px;
+`;
+
+const Submit = styled.input`
+  width: 90%;
+  height: 30px;
+  margin-left: 5%;
+  font-size: 18px;
+  color: white;
+  background: ${({ darktheme }) => (darktheme ? "red" : "#f50057")};
+  border: 0;
+  border-radius: 5px;
 `;

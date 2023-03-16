@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../../../GlobalContext/AppContext";
 import styled from "styled-components";
-import { BiBrightness, BiMoon } from "react-icons/bi";
+import { BiBrightness } from "react-icons/bi";
+import { BsMoonStarsFill } from "react-icons/bs";
 import s from "./Switch.module.css";
 
 const Switch = () => {
@@ -15,12 +16,12 @@ const Switch = () => {
 
   return (
     <SwitchContainer>
-      <BiBrightness />
+      <Sun />
       <label className={s.switch}>
         <input type="checkbox" onClick={() => handleTheme()} />
         <span className={s.slider}></span>
       </label>
-      <BiMoon />
+      <Moon />
     </SwitchContainer>
   );
 };
@@ -36,3 +37,10 @@ const SwitchContainer = styled.div`
     margin-right: 10px;
   }
 `;
+
+const Sun = styled(BiBrightness)`
+  color: yellow;
+`
+const Moon = styled(BsMoonStarsFill)`
+  color: white;
+`

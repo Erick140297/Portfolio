@@ -52,7 +52,7 @@ const NavBar = () => {
               offset={-70}
               duration={500}
               onClick={() => setShowMenu(!showMenu)}
-              darktheme={darkTheme? "true" : 0}
+              darktheme={darkTheme ? "true" : 0}
             >
               {defaultLanguage === "EN" ? `About me` : `Sobre mí`}
             </NavLink>
@@ -65,7 +65,7 @@ const NavBar = () => {
               offset={-70}
               duration={500}
               onClick={() => setShowMenu(!showMenu)}
-              darktheme={darkTheme? "true" : 0}
+              darktheme={darkTheme ? "true" : 0}
             >
               {defaultLanguage === "EN" ? `Skills` : `Tecnologías`}
             </NavLink>
@@ -77,7 +77,7 @@ const NavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              darktheme={darkTheme? "true" : 0}
+              darktheme={darkTheme ? "true" : 0}
               onClick={() => setShowMenu(!showMenu)}
             >
               {defaultLanguage === "EN" ? `Projects` : `Proyectos`}
@@ -90,7 +90,7 @@ const NavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              darktheme={darkTheme? "true" : 0}
+              darktheme={darkTheme ? "true" : 0}
               onClick={() => setShowMenu(!showMenu)}
             >
               {defaultLanguage === "EN" ? `Contact` : `Contacto`}
@@ -100,7 +100,10 @@ const NavBar = () => {
         <Settings>
           <Switch />
           <Language>
-            <Select onChange={(e) => handlerLanguage(e)}>
+            <Select
+              onChange={(e) => handlerLanguage(e)}
+              darktheme={darkTheme ? "true" : 0}
+            >
               <option value="EN">EN</option>
               <option value="ES">ES</option>
             </Select>
@@ -121,7 +124,7 @@ const NavContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: ${({ darktheme }) => (darktheme ? "#212020" : "#9f9f9f")};
+  background: ${({ darktheme }) => (darktheme ? "#212020" : "#2196f3")};
   height: ${({ scrollTop }) => (scrollTop > 0 ? "60px" : "80px")};
   padding: 20px;
   transition: all 0.3s ease;
@@ -133,11 +136,11 @@ const NavContainer = styled.nav`
 const Title = styled.h2`
   font-size: 30px;
   transition: all 0.5s ease;
+  color: white;
 
   &:hover {
     padding: 5px 10px;
-    color: ${({ darktheme }) => (darktheme ? "#000000" : "#ffffff")};
-    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#000000")};
+    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#f50057")};
     border-radius: 15px;
     cursor: pointer;
   }
@@ -167,11 +170,11 @@ const NavLink = styled(Link)`
   font-size: 20px;
   font-weight: bolder;
   transition: all 0.5s ease;
+  color: white;
 
   &:hover {
     padding: 5px 10px;
-    color: ${({ darktheme }) => (darktheme ? "#000000" : "#ffffff")};
-    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#000000")};
+    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#f50057")};
     border-radius: 15px;
     cursor: pointer;
   }
@@ -200,6 +203,7 @@ const Settings = styled.div`
 const World = styled(TbWorld)`
   font-size: 20px;
   margin-left: 5px;
+  color: white;
 `;
 
 const Language = styled.div`
@@ -212,7 +216,8 @@ const Language = styled.div`
 const Select = styled.select`
   padding: 3px;
   border-radius: 5px;
-  background: #ccc;
+  background: ${({ darktheme }) => (darktheme ? "#ff0000" : "#f50057")};
+  color: white;
 
   &:focus {
     outline: none;
@@ -248,7 +253,7 @@ const ItemsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     transition: 0.5s all ease;
-    background: ${({ darktheme }) => (darktheme ? "#212020" : "#9f9f9f")};
+    background: ${({ darktheme }) => (darktheme ? "#212020" : "#2196f3")};
     z-index: 1;
     padding-bottom: 15px;
   }
