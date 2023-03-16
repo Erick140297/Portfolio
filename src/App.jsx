@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { AppContext } from "./GlobalContext/AppContext";
 import styled from "styled-components";
 import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
+import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
@@ -13,9 +14,10 @@ function App() {
   const darkTheme = state.darkTheme;
 
   return (
-    <AppContainer darkTheme={darkTheme}>
+    <AppContainer darktheme={darkTheme}>
       <NavBar />
       <About />
+      <Skills />
       <Projects />
       <Contact />
       <Footer />
@@ -27,11 +29,10 @@ export default App;
 
 const AppContainer = styled.div`
   width: 100%;
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ darkTheme }) => (darkTheme ? "#050402" : "#ffffff")};
-  color: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#050402")};
+  background: ${({ darktheme }) => (darktheme ? "#050402" : "#ffffff")};
+  color: ${({ darktheme }) => (darktheme ? "#ffffff" : "#050402")};
   transition: all 0.3s ease;
 `;

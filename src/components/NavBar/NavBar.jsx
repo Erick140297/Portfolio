@@ -30,7 +30,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <NavContainer scrollTop={scrollTop} darkTheme={darkTheme}>
+    <NavContainer scrollTop={scrollTop} darktheme={darkTheme}>
       <Title
         onClick={() => {
           scrollToTop();
@@ -42,8 +42,8 @@ const NavBar = () => {
       <MobileIcon onClick={() => setShowMenu(!showMenu)}>
         <BtnMenu />
       </MobileIcon>
-      <ItemsContainer open={showMenu} darkTheme={darkTheme}>
-        <Menu darkTheme={darkTheme}>
+      <ItemsContainer open={showMenu} darktheme={darkTheme}>
+        <Menu darktheme={darkTheme}>
           <li>
             <NavLink
               to="about"
@@ -51,10 +51,23 @@ const NavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              darkTheme={darkTheme}
               onClick={() => setShowMenu(!showMenu)}
+              darktheme={darkTheme? "true" : 0}
             >
               {defaultLanguage === "EN" ? `About me` : `Sobre mí`}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={() => setShowMenu(!showMenu)}
+              darktheme={darkTheme? "true" : 0}
+            >
+              {defaultLanguage === "EN" ? `Skills` : `Tecnologías`}
             </NavLink>
           </li>
           <li>
@@ -64,7 +77,7 @@ const NavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              darkTheme={darkTheme}
+              darktheme={darkTheme? "true" : 0}
               onClick={() => setShowMenu(!showMenu)}
             >
               {defaultLanguage === "EN" ? `Projects` : `Proyectos`}
@@ -77,7 +90,7 @@ const NavBar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              darkTheme={darkTheme}
+              darktheme={darkTheme? "true" : 0}
               onClick={() => setShowMenu(!showMenu)}
             >
               {defaultLanguage === "EN" ? `Contact` : `Contacto`}
@@ -108,7 +121,7 @@ const NavContainer = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: ${({ darkTheme }) => (darkTheme ? "#212020" : "#9f9f9f")};
+  background: ${({ darktheme }) => (darktheme ? "#212020" : "#9f9f9f")};
   height: ${({ scrollTop }) => (scrollTop > 0 ? "60px" : "80px")};
   padding: 20px;
   transition: all 0.3s ease;
@@ -123,8 +136,8 @@ const Title = styled.h2`
 
   &:hover {
     padding: 5px 10px;
-    color: ${({ darkTheme }) => (darkTheme ? "#000000" : "#ffffff")};
-    background: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#000000")};
+    color: ${({ darktheme }) => (darktheme ? "#000000" : "#ffffff")};
+    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#000000")};
     border-radius: 15px;
     cursor: pointer;
   }
@@ -149,7 +162,7 @@ const Menu = styled.ul`
 `;
 
 const NavLink = styled(Link)`
-  color: ${({ darkTheme }) => (darkTheme ? "#ff0000" : "#000000")};
+  color: ${({ darktheme }) => (darktheme ? "#ff0000" : "#000000")};
   text-decoration: none;
   font-size: 20px;
   font-weight: bolder;
@@ -157,8 +170,8 @@ const NavLink = styled(Link)`
 
   &:hover {
     padding: 5px 10px;
-    color: ${({ darkTheme }) => (darkTheme ? "#000000" : "#ffffff")};
-    background: ${({ darkTheme }) => (darkTheme ? "#ffffff" : "#000000")};
+    color: ${({ darktheme }) => (darktheme ? "#000000" : "#ffffff")};
+    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#000000")};
     border-radius: 15px;
     cursor: pointer;
   }
@@ -235,7 +248,7 @@ const ItemsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     transition: 0.5s all ease;
-    background: ${({ darkTheme }) => (darkTheme ? "#212020" : "#9f9f9f")};
+    background: ${({ darktheme }) => (darktheme ? "#212020" : "#9f9f9f")};
     z-index: 1;
     padding-bottom: 15px;
   }

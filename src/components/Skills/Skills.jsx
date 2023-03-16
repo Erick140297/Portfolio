@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../GlobalContext/AppContext";
 import styled from "styled-components";
 
-const About = () => {
+const Skills = () => {
   const { state } = useContext(AppContext);
   const defaultLanguage = state.language;
 
@@ -10,7 +10,7 @@ const About = () => {
     <Container>
       {defaultLanguage === "EN" ? (
         <div>
-          <h2 id="about">About me</h2>
+          <h2 id="skills">Skills</h2>
           <p>
             Hi there! I'm Erick Monterrubio, a technology-driven web developer.
             I specialize in developing websites and web applications, and I
@@ -38,7 +38,7 @@ const About = () => {
   );
 };
 
-export default About;
+export default Skills;
 
 const Container = styled.div`
   display: flex;
@@ -65,3 +65,4 @@ const Container = styled.div`
     }
   }
 `;
+
