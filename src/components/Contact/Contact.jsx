@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../../GlobalContext/AppContext";
+import emailjs from "emailjs-com";
 import toast, { Toaster } from "react-hot-toast";
 import styled from "styled-components";
 
@@ -62,10 +63,24 @@ const Contact = () => {
       (input.message === "")
     ) {
       validate(input);
-      toast.error("E-mail could not be sent!");
+      defaultLanguage === "EN"
+        ? toast.error("E-mail could not be sent!")
+        : toast.error("El correo no se pudo enviar");
     } else if (!response) {
-      //Aquí va la función que mandará el correo
-      toast.success("E-mail sent!");
+      emailjs
+        .send("service_bbir3ym", "template_xuepvsc", input, "tHlLmksyS974BXxhT")
+        .then(
+          () => {
+            defaultLanguage === "EN"
+            ? toast.success("E-mail sent!")
+            : toast.success("Correo enviado");
+          },
+          () => {
+            defaultLanguage === "EN"
+            ? toast.error("E-mail could not be sent!")
+            : toast.error("El correo no se pudo enviar");
+          }
+        );
       setCountSubmit(0);
       setInput({
         name: "",
@@ -74,7 +89,9 @@ const Contact = () => {
         message: "",
       });
     } else {
-      toast.error("E-mail sent!");
+      defaultLanguage === "EN"
+        ? toast.error("E-mail could not be sent!")
+        : toast.error("El correo no se pudo enviar");
     }
   };
 
@@ -95,11 +112,14 @@ const Contact = () => {
                   onChange={(e) => handlerChange(e)}
                   type="text"
                   name="name"
+                  autoComplete="nope"
                   placeholder="Name"
                   value={input.name}
                 />
                 {inputValidate.name && (
-                  <Alert>Please complete this field.</Alert>
+                  <Alert darktheme={darkTheme}>
+                    Please complete this field.
+                  </Alert>
                 )}
               </Item>
               <Item>
@@ -108,11 +128,14 @@ const Contact = () => {
                   onChange={(e) => handlerChange(e)}
                   type="text"
                   name="lastName"
+                  autoComplete="nope"
                   placeholder="Last name"
                   value={input.lastName}
                 />
                 {inputValidate.lastName && (
-                  <Alert>Please complete this field.</Alert>
+                  <Alert darktheme={darkTheme}>
+                    Please complete this field.
+                  </Alert>
                 )}
               </Item>
               <Item>
@@ -121,14 +144,18 @@ const Contact = () => {
                   onChange={(e) => handlerChange(e)}
                   type="eemail"
                   name="email"
+                  autoComplete="nope"
                   placeholder="E-mail"
                   value={input.email}
-                  autoComplete="nope"
                 />
                 {inputValidate.email && (
-                  <Alert>Please complete this field.</Alert>
+                  <Alert darktheme={darkTheme}>
+                    Please complete this field.
+                  </Alert>
                 )}
-                {emailFormat && <Alert>Invalid e-mail format</Alert>}
+                {emailFormat && (
+                  <Alert darktheme={darkTheme}>Invalid e-mail format</Alert>
+                )}
               </Item>
               <Item>
                 <label>Message</label>
@@ -137,11 +164,14 @@ const Contact = () => {
                   name="message"
                   cols="30"
                   rows="10"
+                  autoComplete="nope"
                   value={input.message}
                   placeholder="Message..."
                 ></textarea>
                 {inputValidate.message && (
-                  <Alert>Please complete this field.</Alert>
+                  <Alert darktheme={darkTheme}>
+                    Please complete this field.
+                  </Alert>
                 )}
               </Item>
               <input type="submit" value={"Submit"} />
@@ -150,22 +180,84 @@ const Contact = () => {
         </div>
       ) : (
         <div>
-          <h2 id="contact">Contact</h2>
-          <form action="">
-            <div>
-              <label></label>
-              <input type="text" />
-            </div>
-            <div>
-              <label></label>
-              <input type="text" />
-            </div>
-            <div>
-              <label></label>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
-            </div>
-            <input type="submit" value="Enviar" />
-          </form>
+          <h2 id="contact">Contacto</h2>
+          <p>
+            Si deseas contactarme, por favor llena el siguiente formulario y con
+            gusto responderé a tus preguntas o comentarios. ¡Gracias!
+          </p>
+          <FormContainer>
+            <form onSubmit={(e) => handlerSubmit(e, input)}>
+              <Item>
+                <label>Nombre</label>
+                <input
+                  onChange={(e) => handlerChange(e)}
+                  type="text"
+                  name="name"
+                  autoComplete="nope"
+                  placeholder="Nombre"
+                  value={input.name}
+                />
+                {inputValidate.name && (
+                  <Alert darktheme={darkTheme}>
+                    Por favor llena este campo.
+                  </Alert>
+                )}
+              </Item>
+              <Item>
+                <label>Apellido</label>
+                <input
+                  onChange={(e) => handlerChange(e)}
+                  type="text"
+                  name="lastName"
+                  autoComplete="nope"
+                  placeholder="Apellido"
+                  value={input.lastName}
+                />
+                {inputValidate.lastName && (
+                  <Alert darktheme={darkTheme}>
+                    Por favor llena este campo.
+                  </Alert>
+                )}
+              </Item>
+              <Item>
+                <label>Correo</label>
+                <input
+                  onChange={(e) => handlerChange(e)}
+                  type="eemail"
+                  name="email"
+                  autoComplete="nope"
+                  placeholder="Correo"
+                  value={input.email}
+                />
+                {inputValidate.email && (
+                  <Alert darktheme={darkTheme}>
+                    Por favor llena este campo.
+                  </Alert>
+                )}
+                {emailFormat && (
+                  <Alert darktheme={darkTheme}>Correo no válido</Alert>
+                )}
+              </Item>
+              <Item>
+                <label>Mensaje</label>
+                <textarea
+                  onChange={(e) => handlerChange(e)}
+                  name="message"
+                  cols="30"
+                  rows="10"
+                  autoComplete="nope"
+                  value={input.message}
+                  placeholder="Tu mensaje..."
+                ></textarea>
+                {inputValidate.message && (
+                  <Alert darktheme={darkTheme}>
+                    Por favor llena este campo.
+                  </Alert>
+                )}
+              </Item>
+              <input type="submit" value={"Enviar"} />
+            </form>
+          </FormContainer>
         </div>
       )}
       <Toaster />
@@ -191,7 +283,7 @@ const Container = styled.div`
     margin-bottom: 20px;
   }
   form {
-    background: ${({ darktheme }) => (darktheme ? "#212020" : "#9f9f9f")};
+    background: ${({ darktheme }) => (darktheme ? "#212020" : "#aba8a8")};
     padding: 20px;
     border-radius: 10px;
     width: 60%;
@@ -244,7 +336,7 @@ const FormContainer = styled.div`
 `;
 
 const Alert = styled.span`
-  color: red;
+  color: ${({ darktheme }) => (darktheme ? "#ff0000" : "#d00707")};
   margin-left: 5px;
   font-size: 16px;
 `;
