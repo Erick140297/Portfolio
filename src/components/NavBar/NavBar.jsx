@@ -36,6 +36,7 @@ const NavBar = () => {
           scrollToTop();
           showMenu && setShowMenu(!showMenu);
         }}
+        darktheme={darkTheme}
       >
         Erick Monterrubio
       </Title>
@@ -140,7 +141,7 @@ const Title = styled.h2`
 
   &:hover {
     padding: 5px 10px;
-    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#f50057")};
+    background: ${({ darktheme }) => (darktheme ? "#ff0000" : "#f50057")};
     border-radius: 15px;
     cursor: pointer;
   }
@@ -174,7 +175,7 @@ const NavLink = styled(Link)`
 
   &:hover {
     padding: 5px 10px;
-    background: ${({ darktheme }) => (darktheme ? "#ffffff" : "#f50057")};
+    background: ${({ darktheme }) => (darktheme ? "#ff0000" : "#f50057")};
     border-radius: 15px;
     cursor: pointer;
   }
