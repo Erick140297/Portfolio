@@ -12,7 +12,7 @@ const Projects = () => {
       {defaultLanguage === "EN" ? (
         <>
           <h2 id="projects">Projects</h2>
-          <p>Here will be my projects...</p>
+          <p>Here will be my projects... </p>
         </>
       ) : (
         <>
