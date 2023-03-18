@@ -129,6 +129,7 @@ const NavContainer = styled.nav`
   height: ${({ scrollTop }) => (scrollTop > 0 ? "60px" : "80px")};
   padding: 20px;
   transition: all 0.3s ease;
+  z-index:3;
   @media screen and (max-width: 950px) {
     height: 60px;
   }
