@@ -5,7 +5,6 @@ import PiFood from "./PI-Food/PiFood";
 
 const Projects = () => {
   const { state } = useContext(AppContext);
-  const darkTheme = state.darkTheme;
   const defaultLanguage = state.language;
 
   return (
