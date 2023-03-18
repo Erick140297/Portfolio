@@ -20,9 +20,9 @@ const Projects = () => {
           <h2 id="projects">Proyectos</h2>
         </>
       )}
+      <Invtaciones/>
       <GalaxiaTech />
       <PiFood />
-      <Invtaciones/>
     </Container>
   );
 };
