@@ -41,7 +41,7 @@ const Skills = () => {
         </>
       ) : (
         <>
-          <h2 id="about">Tecnologías</h2>
+          <h2 id="skills">Tecnologías</h2>
           <LogoContainer darktheme={darkTheme}>
             {Logos.map((element, index) => {
               return (
