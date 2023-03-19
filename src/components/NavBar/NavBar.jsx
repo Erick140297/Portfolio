@@ -13,12 +13,24 @@ const NavBar = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
 
+  const themeLS = window.localStorage.getItem("theme")
+  let themeBool = false
+
+  if(themeLS === "true"){
+    themeBool = true
+  } else{
+    themeBool = false
+  }
+
+  const languageLS = window.localStorage.getItem("language")
+  
   const handlerScroll = () => {
     setScrollTop(window.scrollY);
   };
 
   const handlerLanguage = (e) => {
     dispatch({ type: "CHANGE_LANGUAGE", payload: e.target.value });
+    window.localStorage.setItem("language", e.target.value)
   };
 
   const scrollToTop = () => {
@@ -26,6 +38,8 @@ const NavBar = () => {
   };
 
   useEffect(() => {
+    dispatch({ type: "SWITCH_THEME", payload:  themeBool});
+    languageLS && dispatch({ type: "CHANGE_LANGUAGE", payload: languageLS });
     window.addEventListener("scroll", handlerScroll);
   }, []);
 
@@ -104,6 +118,7 @@ const NavBar = () => {
             <Select
               onChange={(e) => handlerLanguage(e)}
               darktheme={darkTheme ? "true" : 0}
+              value={languageLS === "EN"? "EN": "ES"}
             >
               <option value="EN">EN</option>
               <option value="ES">ES</option>
