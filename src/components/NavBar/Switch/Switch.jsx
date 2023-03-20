@@ -6,29 +6,21 @@ import { BsMoonStarsFill } from "react-icons/bs";
 import s from "./Switch.module.css";
 
 const Switch = () => {
-  const [theme, setTheme] = useState(true);
-  const { dispatch } = useContext(AppContext);
-
-  const themeLS = window.localStorage.getItem("theme")
-  let themeBool = false
-  
-  if(themeLS === "true"){
-    themeBool = true
-  } else{
-    themeBool = false
-  }
+  const [theme, setTheme] = useState(window.localStorage.getItem("theme") === "true"? true: false);
+  const { state, dispatch } = useContext(AppContext);
+  const darkTheme = state.darkTheme;
 
   function handleTheme() {
     theme === false ? setTheme(true) : setTheme(false);
-    dispatch({ type: "SWITCH_THEME", payload: theme });
-    window.localStorage.setItem("theme", theme)
+    dispatch({ type: "SWITCH_THEME", payload: !theme });
+    window.localStorage.setItem("theme", !theme)
   }
-
+  
   return (
     <SwitchContainer>
       <Sun />
       <label className={s.switch}>
-        <input type="checkbox" onChange={() => handleTheme()} checked={themeBool}/>
+        <input type="checkbox" onChange={() => handleTheme()} checked={theme}/>
         <span className={s.slider}></span>
       </label>
       <Moon />
