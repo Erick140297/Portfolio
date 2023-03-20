@@ -28,7 +28,7 @@ const Switch = () => {
     <SwitchContainer>
       <Sun />
       <label className={s.switch}>
-        <input type="checkbox" onClick={() => handleTheme()} checked={themeBool}/>
+        <input type="checkbox" onChange={() => handleTheme()} checked={themeBool}/>
         <span className={s.slider}></span>
       </label>
       <Moon />
