@@ -7,6 +7,8 @@ import styled from "styled-components";
 const Footer = () => {
   const { state } = useContext(AppContext);
   const darkTheme = state.darkTheme;
+  const defaultLanguage = state.language;
+
   return (
     <FooterContainer darktheme={darkTheme}>
       <A
@@ -16,18 +18,17 @@ const Footer = () => {
       >
         <In />
       </A>
-      <A
-        target="_blank"
-        rel="noreferrer"
-        href="https://github.com/Erick140297"
-      >
+      <A target="_blank" rel="noreferrer" href="https://github.com/Erick140297">
         <Git />
       </A>
       <A
         target="_blank"
         rel="noreferrer"
-        //Hacer un link en ingles y uno para español
-        href="https://drive.google.com/file/d/1CLUfx62QrlTaPj1t78GqYrpBOk6Z_sD_/view?usp=sharing"
+        href={
+          defaultLanguage === "EN"
+            ? "https://drive.google.com/file/d/1ryOnzU2uDhjdnYCVXqmJ6l8nwr-sik6c/view?usp=sharing"
+            : "https://drive.google.com/file/d/1yQYgcYtk1-DUoXayKN9wWjthML17a69Y/view?usp=sharing"
+        }
       >
         <CV darktheme={darkTheme}>CV</CV>
       </A>
