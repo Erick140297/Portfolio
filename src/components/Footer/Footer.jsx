@@ -26,8 +26,8 @@ const Footer = () => {
         rel="noreferrer"
         href={
           defaultLanguage === "EN"
-            ? "https://drive.google.com/file/d/1ryOnzU2uDhjdnYCVXqmJ6l8nwr-sik6c/view?usp=sharing"
-            : "https://drive.google.com/file/d/1yQYgcYtk1-DUoXayKN9wWjthML17a69Y/view?usp=sharing"
+            ? "https://drive.google.com/file/d/1Y94mYvPAsKs0rrsOF94N4zDjBhsKgX6S/view?usp=sharing"
+            : "https://drive.google.com/file/d/1lCyHN3FGx5QS688_8KMPrN6s6xbyqjRO/view?usp=sharing"
         }
       >
         <CV darktheme={darkTheme}>CV</CV>
