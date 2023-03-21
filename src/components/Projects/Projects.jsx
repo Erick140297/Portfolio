@@ -3,7 +3,7 @@ import { AppContext } from "../../GlobalContext/AppContext";
 import styled from "styled-components";
 import PiFood from "./PI-Food/PiFood";
 import GalaxiaTech from "./GalaxiaTech/GalaxiaTech";
-import Invtaciones from "./Invitaciones/Invitaciones"
+import Invtaciones from "./Invitaciones/Invitaciones";
 
 const Projects = () => {
   const { state } = useContext(AppContext);
@@ -20,7 +20,7 @@ const Projects = () => {
           <h2 id="projects">Proyectos</h2>
         </>
       )}
-      <Invtaciones/>
+      <Invtaciones />
       <GalaxiaTech />
       <PiFood />
     </Container>

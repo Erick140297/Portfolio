@@ -8,20 +8,20 @@ const Skills = () => {
   const defaultLanguage = state.language;
 
   const Logos = [
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/React_aunlxl.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/JavaScript_vtxy84.png",
-
     "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/HTML_idmvlv.png",
     "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/CSS3_wf1gyo.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Bootstrap_t4jcrl.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Dart_b8pl6m.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Figma_c8zjdn.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Postgresql_edblny.png",
+    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/JavaScript_vtxy84.png",
+    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/React_aunlxl.png",
     "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013865/Logos/Redux_nvftrm.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013865/Logos/Typescript_j3lzhd.png",
+    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Bootstrap_t4jcrl.png",
     "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013865/Logos/Nextjs_t5umbk.png",
+    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679414972/Logos/Node.js_zwnqc4.png",
+    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Postgresql_edblny.png",
     "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/MongoDB_no2okt.png",
-    "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/Flutter_wr06ih.png",
+    // "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Figma_c8zjdn.png",
+    // "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013865/Logos/Typescript_j3lzhd.png",
+    // `"https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013866/Logos/Dart_b8pl6m.png",`
+    // "https://res.cloudinary.com/dnrcmjyu1/image/upload/v1679013867/Logos/Flutter_wr06ih.png",
   ];
 
   return (

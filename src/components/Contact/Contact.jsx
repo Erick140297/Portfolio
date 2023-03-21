@@ -174,7 +174,7 @@ const Contact = () => {
                   </Alert>
                 )}
               </Item>
-              <Submit type="submit" value={"Submit"} darktheme={darkTheme}/>
+              <Submit type="submit" value={"Submit"} darktheme={darkTheme} />
             </form>
           </FormContainer>
         </div>
@@ -255,7 +255,7 @@ const Contact = () => {
                   </Alert>
                 )}
               </Item>
-              <Submit type="submit" value={"Enviar"} darktheme={darkTheme}/>
+              <Submit type="submit" value={"Enviar"} darktheme={darkTheme} />
             </form>
           </FormContainer>
         </div>
@@ -357,7 +357,7 @@ const FormContainer = styled.div`
 
 const Alert = styled.span`
   /* color: ${({ darktheme }) => (darktheme ? "#ff0000" : "#000000")}; */
-  color: #ff0000; 
+  color: #ff0000;
   font-size: 16px;
 `;
 
