@@ -8,9 +8,9 @@ import {
 export default ({ to, darkTheme, onClick }) => (
   <>
     {to === "prev" ? (
-      <ArrowLeft onClick={onClick} darktheme={darkTheme ? "true" : 0}/>
+      <ArrowLeft onClick={onClick} darktheme={darkTheme ? "true" : 0} />
     ) : (
-      <ArrowRight onClick={onClick} darktheme={darkTheme ? "true" : 0}/>
+      <ArrowRight onClick={onClick} darktheme={darkTheme ? "true" : 0} />
     )}
   </>
 );
